@@ -13,7 +13,7 @@
       "use": "@vercel/node"  
     }
   ],
-  "routes": [
+  "rewrites": [
     {
       "src": "/api/(.*)",  
       "dest": "book-exchange-backend/backend/api/server.js"
@@ -23,6 +23,6 @@
       "dest": "bookexchange-frontend/build/$1"
     }
 
-  ],
-  "rewrites": [ { "source": "/(.*)", "destination": "/" }]
+  ]
+  
 }
