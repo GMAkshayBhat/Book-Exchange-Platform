@@ -22,5 +22,6 @@
       "src": "/(.*)",  
       "dest": "bookexchange-frontend/build/$1"
     }
+
   ]
 }
