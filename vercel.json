@@ -1,24 +1,26 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "book-exchange-frontend/package.json",
-        "use": "@vercel/react"
-      },
-      {
-        "src": "api/server.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "bookexchange-frontend/package.json",  
+      "use": "@vercel/static-build", 
+      "config": {
+        "distDir": "build" 
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/server.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/book-exchange-frontend/build/$1"
-      }
-    ]
-  }
-  
+    },
+    {
+      "src": "book-exchange-backend/backend/api/server.js",  
+      "use": "@vercel/node"  
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",  
+      "dest": "book-exchange-backend/backend/api/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "bookexchange-frontend/build/$1"
+    }
+  ]
+}
