@@ -1,6 +1,6 @@
 // routes/protectedRoutes.js
 const express = require('express');
-const authMiddleware = require('../middlewares/authMiddleware');  // Import the auth middleware
+const authMiddleware = require('../../middlewares/authMiddleware');  // Import the auth middleware
 const router = express.Router();
 
 // Example of a protected route

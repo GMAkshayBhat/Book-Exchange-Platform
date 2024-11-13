@@ -1,6 +1,6 @@
 // routes/exchangeRoutes.js
 const express = require('express');
-const { createExchangeRequest, getExchangeRequests, getExchangeRequestById, updateExchangeRequest } = require('../controllers/exchangeController');
+const { createExchangeRequest, getExchangeRequests, getExchangeRequestById, updateExchangeRequest } = require('../../controllers/exchangeController');
 const router = express.Router();
 
 // Exchange request routes

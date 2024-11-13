@@ -1,6 +1,6 @@
 // routes/bookRoutes.js
 const express = require('express');
-const { createBook, getBooks, getBookById, updateBook, deleteBook } = require('../controllers/bookController');
+const { createBook, getBooks, getBookById, updateBook, deleteBook } = require('../../controllers/bookController');
 const router = express.Router();
 
 // Book routes

@@ -10,7 +10,7 @@ const exchangeRoutes = require('./routes/exchangeRoutes');
 const protectedRoutes = require('./routes/protectedRoutes');  // Import the protected routes
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' })); // Allow requests from React dev server
+app.use(cors({ origin: '*' })); // Allow requests from React dev server
 // Middleware to parse JSON request body
 app.use(express.json());
 

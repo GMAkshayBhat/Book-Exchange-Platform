@@ -1,11 +1,11 @@
 // routes/authRoutes.js
 const express = require('express');
-const authMiddleware = require('../middlewares/authMiddleware');
+const authMiddleware = require('../../middlewares/authMiddleware');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const User = require('../models/userModel');  // Import your Mongoose User model
+const User = require('../../models/userModel');  // Import your Mongoose User model
 const router = express.Router();
-const { resetPasswordRequest, resetPassword, updateUserProfile, upload } = require('../controllers/authController');
+const { resetPasswordRequest, resetPassword, updateUserProfile, upload } = require('../../controllers/authController');
 
 // Password Reset Request Route (to send reset link)
 router.post('/forgot-password', resetPasswordRequest);
