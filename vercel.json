@@ -5,7 +5,7 @@
       "src": "bookexchange-frontend/package.json",  
       "use": "@vercel/static-build", 
       "config": {
-        "distDir": "build" 
+        "distDir": "build"  
       }
     },
     {
@@ -19,7 +19,7 @@
       "dest": "book-exchange-backend/backend/api/server.js"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*)",  
       "dest": "bookexchange-frontend/build/$1"
     }
   ]
