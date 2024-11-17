@@ -35,7 +35,7 @@ The **Book-Exchange-Platform** is a user-friendly web application that enables b
 ### Backend Setup (Express.js with MongoDB)
 1. Clone the repository:
    ```bash
-   git clone [Book Exchange Platform](https://github.com/GMAkshayBhat/Book-Exchange-Platform.git)
+   git clone https://github.com/GMAkshayBhat/Book-Exchange-Platform.git
    cd Book-Exchange-Platform
     - Navigate to book-exchange-backend ( cd book-exchange-backend)
     - cd backend
