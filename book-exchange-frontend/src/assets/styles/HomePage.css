@@ -1,0 +1,112 @@
+/* Custom CSS file */
+.card {
+    border-radius: 8px; /* Smaller border-radius */
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slightly smaller scale on hover */
+}
+
+.card img {
+    height: 180px; /* Smaller image height */
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: left;
+    padding: 10px; /* Reduced padding */
+}
+
+.card-title {
+    font-size: 1rem; /* Smaller font size */
+    font-weight: bold;
+}
+
+.text-success {
+    color: green;  /* Custom green color */
+}
+
+.text-danger {
+    color: red;  /* Custom red color */
+}
+
+.text-dark-green {
+    color: #006400; /* Dark Green */
+}
+
+/* In your CSS file (e.g., HomePage.css) */
+.small-card {
+    max-width: 220px; /* Smaller max width */
+    margin: 0 auto;
+}
+
+/* Style for the pagination container */
+.pagination {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0;
+  margin-top: 15px; /* Reduced margin-top */
+}
+
+/* Style for each pagination item */
+.pagination li {
+  margin: 0 3px; /* Smaller margin */
+}
+
+.pagination li a {
+  padding: 8px 12px; /* Reduced padding */
+  color: #805b09;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.pagination li a:hover {
+  background-color: #ba7a1a;
+  color: #fff;
+}
+
+.pagination li.active a {
+  background-color: #824e06;
+  color: white;
+  border-color: #572d03;
+}
+
+/* Positioning the pagination at the bottom-right of the screen */
+.pagination-container {
+  position: static;
+  bottom: 15px; /* Reduced bottom margin */
+  right: 15px; /* Reduced right margin */
+  z-index: 1000;
+}
+
+h1 {
+    margin-top: 0.5% !important; /* Smaller top margin */
+    margin-bottom: -1% !important; /* Reduced bottom margin */
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1.5rem; /* Smaller font size */
+    color: brown !important;  /* Custom heading color */
+}
+
+.search-input {
+    max-width: 300px; /* Limit the width of the search input */
+  }
+  
+  .search-icon {
+    cursor: pointer; /* Add a pointer cursor for the search icon */
+  }
+  .text-start {
+    text-align: left !important;
+    padding-left: 6% !important;
+}
+.padding-right{
+    padding-right: 6.3%;
+}
+.remove-padding-bottom {
+    padding: 1rem 1rem 0rem !important;
+}

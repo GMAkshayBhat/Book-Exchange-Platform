@@ -1,4 +1,12 @@
-// server.js
+/**
+ * @file server.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 04 19:18
+ * @modified 17 19:18
+ */
+
+
 require('dotenv').config();  // Load environment variables
 const express = require('express');
 const cors = require('cors');
@@ -8,9 +16,9 @@ const authRoutes = require('./routes/authRoutes');
 const bookRoutes = require('./routes/bookRoutes');
 const exchangeRoutes = require('./routes/exchangeRoutes');
 const protectedRoutes = require('./routes/protectedRoutes');  // Import the protected routes
-
+const path = require('path');
 const app = express();
-app.use(cors({ origin: '*' })); // Allow requests from React dev server
+app.use(cors({ origin: 'http://localhost:3000' })); // Allow requests from React dev server
 // Middleware to parse JSON request body
 app.use(express.json());
 
@@ -28,6 +36,7 @@ const authenticateJWT = (req, res, next) => {
       return res.status(403).json({ message: 'Invalid token.' });
     }
     req.user = decoded; // Attach user info to request object
+    console.log('Token decoded:', decoded);
     next(); // Proceed to the next middleware/route
   });
 };
@@ -36,8 +45,9 @@ const authenticateJWT = (req, res, next) => {
 app.use('/api/auth', authRoutes);
 
 // Protected routes (require JWT)
-app.use('/api/books', authenticateJWT, bookRoutes);
+app.use('/api/books', bookRoutes);
 app.use('/api/exchanges', authenticateJWT, exchangeRoutes);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Optional: If you want to add any protected routes:
 app.use('/api/protected', authenticateJWT, protectedRoutes); 

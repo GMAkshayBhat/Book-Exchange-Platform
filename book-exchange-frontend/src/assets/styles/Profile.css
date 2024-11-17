@@ -1,0 +1,69 @@
+/* Profile page container */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Profile Heading section with card-like style */
+.profile-page .profile-heading {
+  background-color: white;  /* Background color for the card */
+  padding: 15px 20px;  /* Padding inside the card */
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow for card effect */
+  width: 100%;
+  max-width: 400px;  /* Maximum width for the heading */
+  margin-bottom: 20px;  /* Space between heading and profile info */
+  text-align: center;  /* Center the heading text */
+}
+
+/* Profile info section */
+.profile-page .profile-info {
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  align-items: center;
+  text-align: center;
+  background-color: white;  /* Background color for the card */
+  padding: 20px;  /* Padding inside the card */
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow for card effect */
+  width: 100%;
+  max-width: 400px;  /* Maximum width for the profile info */
+  margin-top: 20px;  /* Space between profile and form */
+}
+
+/* Profile image */
+.profile-page .profile-info img {
+  width: 150px;  /* Adjust the width as needed */
+  height: 150px; /* Set height equal to width to maintain the circular shape */
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+/* Profile text (username, email) */
+.profile-page .profile-info p {
+  margin: 5px 0; /* Margin between username and email */
+  font-size: 16px;
+  color: #333; /* Dark text color */
+}
+
+/* Form styling */
+.profile-page form {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+/* Form group styling */
+.profile-page .form-group {
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.profile-page button {
+  width: 100%;
+  margin-top: 10px;
+}

@@ -1,8 +1,16 @@
-// src/pages/AuthPage.js
-import React, { useState, useContext } from 'react';
+/**
+ * @file LoginPage.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 05 19:28
+ * @modified 17 19:28
+ */
+
+
+import React, { useState, useContext, useEffect } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../utils/AuthContext'; // Import AuthContext
 import youCanWin from '../assets/images/youCanWin.webp'; // Import image
 import Carousel from '../components/Carousel'; // Import the Carousel component
@@ -10,7 +18,7 @@ import '../assets/styles/Auth.css';
 import axiosInstance from '../axiosInstance';
 import ForgotPasswordModal from './PasswordResetPage'; // Import the modal
 
-const AuthPage = () => {
+const AuthPage = ({ onLogin, isLoginClicked, resetLoginClick,isRegisterClicked, resetRegisterClick  })   => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState(''); // New field for registration
@@ -20,6 +28,25 @@ const AuthPage = () => {
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false); // State to control modal visibility
   const { login } = useContext(AuthContext); // Access login function from AuthContext
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (isLoginClicked) {
+      // Expand login form when triggered by navbar
+      console.log("Login form expanded");
+      setIsExpanded(true); // Expand the login form
+      setIsRegistering(false); // Ensure it's in login mode
+      resetLoginClick(); // Reset after expansion
+    }
+
+    if (isRegisterClicked) {
+      // Switch to registration form when triggered
+      console.log("Register form expanded");
+      setIsExpanded(true); // Expand the form
+      setIsRegistering(true); // Switch to register mode
+      resetRegisterClick(); // Reset after expansion
+    }
+  }, [isLoginClicked, isRegisterClicked, resetLoginClick, resetRegisterClick]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

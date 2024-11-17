@@ -1,3 +1,12 @@
+/**
+ * @file index.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 31 19:34
+ * @modified 12 19:34
+ */
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -13,10 +22,7 @@ root.render(
     <App />
   </AuthProvider>
 );
-// <!-- public/index.html -->D:\MTech\2nd Sem\Full-stack\Assignment\Book_Exchange_Platform\book-exchange-frontend\src\assets\images\bookIcon.jpg
+
 <link rel="icon" href="src/assets/images/bookIcon.jpg" />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -1,11 +1,19 @@
-// routes/authRoutes.js
+/**
+ * @file authRoutes.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 04 19:16
+ * @modified 15 19:16
+ */
+
+
 const express = require('express');
 const authMiddleware = require('../../middlewares/authMiddleware');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const User = require('../../models/userModel');  // Import your Mongoose User model
 const router = express.Router();
-const { resetPasswordRequest, resetPassword, updateUserProfile, upload } = require('../../controllers/authController');
+const { registerUser,loginUser, resetPasswordRequest, resetPassword, updateUserProfile, upload } = require('../../controllers/authController');
 
 // Password Reset Request Route (to send reset link)
 router.post('/forgot-password', resetPasswordRequest);
@@ -16,7 +24,6 @@ router.post('/reset-password/:token', resetPassword);
 // Profile Update Route (for name and profile picture)
 router.put('/profile', authMiddleware, upload.single('profilePic'), updateUserProfile);
 
-// Register route
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -60,6 +67,8 @@ router.post('/login', async (req, res) => {
 
     // Compare password with hashed password stored in the database
     const isMatch = await bcrypt.compare(password, user.password);
+    console.log('Manual comparison result:', isMatch);
+
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid email or password' });
     }

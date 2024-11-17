@@ -1,8 +1,16 @@
-// src/axiosInstance.js (Create an Axios instance for handling token)
+/**
+ * @file axiosInstance.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 02 19:33
+ * @modified 17 19:33
+ */
+
+
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://book-exchange-platforms.vercel.app/api',  // Set the base URL for your API
+  baseURL: 'http://localhost:5000/api',  // Set the base URL for your API
 });
 
 axiosInstance.interceptors.request.use(

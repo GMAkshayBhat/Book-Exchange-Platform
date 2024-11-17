@@ -1,3 +1,12 @@
+/**
+ * @file RegisterPage.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 10 19:32
+ * @modified 17 19:32
+ */
+
+
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';

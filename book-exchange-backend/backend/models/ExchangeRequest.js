@@ -1,4 +1,12 @@
-// models/ExchangeRequest.js
+/**
+ * @file ExchangeRequest.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 03 19:20
+ * @modified 03 19:20
+ */
+
+
 const mongoose = require('mongoose');
 
 const exchangeRequestSchema = new mongoose.Schema({

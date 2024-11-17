@@ -1,4 +1,12 @@
-// routes/exchangeRoutes.js
+/**
+ * @file exchangeRoutes.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 17 19:17
+ * @modified 17 19:17
+ */
+
+
 const express = require('express');
 const { createExchangeRequest, getExchangeRequests, getExchangeRequestById, updateExchangeRequest } = require('../../controllers/exchangeController');
 const router = express.Router();

@@ -1,3 +1,12 @@
+/**
+ * @file bookController.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 07 19:19
+ * @modified 13 19:19
+ */
+
+
 const Book = require('../models/bookModel');  // Ensure Book model is correctly imported
 
 // Create a new book
@@ -23,15 +32,36 @@ exports.createBook = async (req, res) => {
   }
 };
 
-// Get all books
+// Get books
 exports.getBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    let books;
+    console.log('req.user:', req.user);  // Log req.user to check if it's populated
+    if (req.query.mine === 'true') {
+     
+      // Fetch only the books of the authenticated user
+      if (!req.user || !req.user.id) {
+       
+        
+        return res.status(401).json({ error: 'Authentication required' });
+      }
+      books = await Book.find({ owner: req.user.id });
+    } else {
+      // Fetch all books (public access)
+      books = await Book.find();
+    }
+
+    if (!books || books.length === 0) {
+      return res.status(200).json({ data: [], message: 'Your book list is currently empty' });
+
+    }
+
     res.status(200).json(books);
   } catch (error) {
     res.status(400).json({ error: 'Error fetching books' });
   }
 };
+
 
 // Get a book by ID
 exports.getBookById = async (req, res) => {
@@ -69,5 +99,25 @@ exports.deleteBook = async (req, res) => {
     res.status(200).json({ message: 'Book deleted successfully' });
   } catch (error) {
     res.status(400).json({ error: 'Error deleting book' });
+  }
+};
+
+// Toggle the favorite status of a book
+exports.toggleFavorite = async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id);
+    if (!book) {
+      return res.status(404).send('Book not found');
+    }
+
+    // Toggle the favorite status
+    book.favorite = !book.favorite;
+    book.updatedAt = Date.now();
+
+    await book.save();
+    res.status(200).json(book);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
   }
 };

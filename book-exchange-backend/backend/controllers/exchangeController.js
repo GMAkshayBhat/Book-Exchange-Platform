@@ -1,5 +1,14 @@
-// controllers/exchangeController.js
+/**
+ * @file exchangeController.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 03 19:15
+ * @modified 12 19:15
+ */
+
+
 const ExchangeRequest = require('../models/ExchangeRequest');
+const { head } = require('../api/routes/authRoutes');
 
 exports.createExchangeRequest = async (req, res) => {
     try {

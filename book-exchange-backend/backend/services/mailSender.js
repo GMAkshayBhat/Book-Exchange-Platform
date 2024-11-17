@@ -1,5 +1,12 @@
-// const defaultClient = SibApiV3Sdk.ApiClient.instance;
-require('dotenv').config();
+/**
+ * @file mailSender.js
+ * @description Description of the file
+ * @author G M Akshay Bhat
+ * @created 11 19:14
+ * @modified 11 19:14
+ */
+
+
 const nodemailer = require('nodemailer');
 
 // Configure transporter for MailerSend SMTP
@@ -9,7 +16,7 @@ const transporter = nodemailer.createTransport({
   secure: false,  // Use true if using port 465
   auth: {
     user: 'MS_hRWg9p@trial-0r83ql31oxmgzw1j.mlsender.net',  // SMTP username
-    pass: process.env.MAIL_API,  // SMTP password
+    pass: 'sgFVyGnnklovf1N8',  // SMTP password
   },
 });
 
